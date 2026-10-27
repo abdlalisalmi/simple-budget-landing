@@ -1,0 +1,319 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-canvas: #f3f3ee;
+  --color-surface: #ffffff;
+  --color-raised: #ededE6;
+  --color-hair: #e6e6df;
+  --color-ink: #101311;
+  --color-muted: #5c665f;
+  --color-mint: #33d69f;
+  --color-on-mint: #06231a;
+  --color-mint-text: #0b7350;
+  --color-mint-soft: #e3f8ef;
+  --color-mint-line: #c9efdd;
+  --color-amber: #f5b03e;
+  --color-amber-text: #a06a00;
+  --color-amber-soft: #fff1d6;
+  --color-blue: #5b97ff;
+  --color-violet: #a78bfa;
+  --color-pink: #f27fb2;
+  --color-pink-text: #b23c78;
+  --color-pink-soft: #fde6f0;
+
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-dm-sans), sans-serif;
+
+  --shadow-card: 0 1px 2px #1013110d, 0 8px 24px #10131114;
+  --shadow-card-hover: 0 2px 4px #1013110d, 0 18px 40px #10131120;
+  --shadow-glow: 0 8px 24px #33d69f66;
+  --shadow-glow-hover: 0 12px 32px #33d69f88;
+
+  --ease-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Inline SVG icons (see components/icons.tsx) */
+.ic {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+/* ---------- Components ---------- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-hair);
+  border-radius: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.lift {
+  transition:
+    transform 0.3s var(--ease-soft),
+    box-shadow 0.3s var(--ease-soft);
+}
+.lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.btn-mint {
+  background: var(--color-mint);
+  color: var(--color-on-mint);
+  box-shadow: var(--shadow-glow);
+  transition:
+    transform 0.25s var(--ease-soft),
+    box-shadow 0.25s var(--ease-soft);
+}
+.btn-mint:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-hover);
+}
+
+.btn-line {
+  border: 1px solid #d5d5cc;
+  background: var(--color-surface);
+  transition:
+    transform 0.25s var(--ease-soft),
+    border-color 0.25s;
+}
+.btn-line:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-ink);
+}
+
+.track {
+  height: 10px;
+  border-radius: 99px;
+  background: #eeeee7;
+  overflow: hidden;
+}
+
+.note {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: var(--shadow-card);
+  animation:
+    pop-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+    floaty 6s ease-in-out infinite;
+}
+
+.wave {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 40px;
+}
+.wave i {
+  display: block;
+  width: 4px;
+  height: 100%;
+  border-radius: 4px;
+  background: var(--color-mint);
+  animation: wave 1s ease-in-out infinite;
+}
+
+.live-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-mint);
+  animation:
+    ring 1.8s ease-out infinite,
+    blink 1.8s ease-in-out infinite;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.hero-in {
+  animation: rise 0.8s var(--ease-soft) both;
+}
+.phone-in {
+  animation: phone-in 0.9s var(--ease-soft) both;
+}
+.drift {
+  animation: drift 9s ease-in-out infinite;
+}
+.demo-msg {
+  animation: msg-in 0.45s var(--ease-soft) both;
+}
+.demo-line {
+  animation: line-in 0.4s var(--ease-soft) both;
+}
+.pulse-ring {
+  animation: ring 1.8s ease-out infinite;
+}
+.scan-line {
+  animation: scan-y 3.6s ease-in-out infinite;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes phone-in {
+  from {
+    opacity: 0;
+    transform: translateY(70px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes floaty {
+  50% {
+    translate: 0 -10px;
+  }
+}
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.2);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+@keyframes scan-y {
+  0%,
+  100% {
+    top: 8%;
+  }
+  50% {
+    top: 90%;
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+  50% {
+    transform: translate(14px, -22px) rotate(8deg);
+  }
+}
+@keyframes grow-x {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+@keyframes ring {
+  0% {
+    box-shadow: 0 0 0 0 #33d69f88;
+  }
+  100% {
+    box-shadow: 0 0 0 14px #33d69f00;
+  }
+}
+@keyframes line-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes msg-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Scroll-driven reveals. Browsers without animation-timeline just show
+   everything, so this is progressive enhancement only. */
+@supports (animation-timeline: view()) {
+  .rv {
+    animation: rise linear backwards;
+    animation-timeline: view();
+    animation-range: entry 0% entry 38%;
+  }
+  .grow {
+    animation: grow-x linear backwards;
+    animation-timeline: view();
+    animation-range: entry 20% entry 90%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
