@@ -42,13 +42,13 @@ export function FactStrip() {
         {FACTS.map((f, i) => (
           <div
             key={f.title}
-            className={`flex flex-[1_1_240px] items-center gap-[18px] px-8 py-[30px] ${i > 0 ? "border-l border-hair" : ""}`}
+            className={`flex flex-[1_1_240px] items-center gap-4 px-5 py-6 sm:gap-[18px] sm:px-8 sm:py-[30px] ${i > 0 ? "max-sm:border-t sm:border-l border-hair" : ""}`}
           >
             <span className="flex size-[52px] flex-none items-center justify-center rounded-2xl bg-mint-soft text-[26px] text-mint-text">
               <Icon name={f.icon} />
             </span>
             <div>
-              <div className="font-display text-[30px] font-bold tracking-[-0.03em]">
+              <div className="font-display text-[26px] font-bold tracking-[-0.03em] sm:text-[30px]">
                 {f.title}
               </div>
               <div className="mt-0.5 text-[15px] text-muted">{f.text}</div>

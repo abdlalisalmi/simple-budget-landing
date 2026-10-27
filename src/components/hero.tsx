@@ -12,12 +12,12 @@ const DOODLES: { icon: IconName; pos: string; size: string; delay: string }[] = 
 ];
 
 const METHOD_PILL =
-  "inline-flex items-center gap-2.5 rounded-full border border-hair bg-surface px-4 py-2.5 text-[15px] font-semibold";
+  "inline-flex items-center justify-center gap-1.5 rounded-full border border-hair bg-surface px-2 py-2 text-sm font-semibold sm:gap-2.5 sm:px-4 sm:py-2.5 sm:text-[15px]";
 
 export function Hero() {
   return (
     <section className="relative mx-auto max-w-[1200px] px-[clamp(20px,5vw,48px)] pb-[clamp(48px,7vw,80px)] pt-[clamp(40px,7vw,88px)]">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden text-ink opacity-10" aria-hidden="true">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden text-ink opacity-10 max-sm:hidden" aria-hidden="true">
         {DOODLES.map((d) => (
           <Icon
             key={d.icon}
@@ -27,7 +27,7 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="relative flex flex-wrap items-center gap-x-8 gap-y-14">
+      <div className="relative flex flex-wrap items-center gap-x-8 gap-y-10 sm:gap-y-14">
         {/* copy */}
         <div className="min-w-0 flex-[1_1_440px]">
           <div className="hero-in inline-flex items-center gap-2.5 rounded-full border border-hair bg-surface py-2 pl-3.5 pr-4 text-sm font-semibold shadow-card">
@@ -35,7 +35,7 @@ export function Hero() {
             Now on iOS &amp; Android
           </div>
           <h1
-            className="hero-in mt-6 font-display text-[clamp(48px,7.6vw,96px)] font-bold leading-[0.96] tracking-[-0.04em]"
+            className="hero-in mt-6 font-display text-[clamp(42px,7.6vw,96px)] font-bold leading-[0.96] tracking-[-0.04em]"
             style={{ animationDelay: "0.08s" }}
           >
             Every dollar.
@@ -53,26 +53,26 @@ export function Hero() {
             is up to date.
           </p>
           <div
-            className="hero-in mt-[34px] flex flex-wrap gap-3"
+            className="hero-in mt-8 flex flex-col gap-3 sm:mt-[34px] sm:flex-row sm:flex-wrap"
             style={{ animationDelay: "0.24s" }}
           >
             <a
               href="#download"
-              className="btn-mint inline-flex min-h-[58px] items-center gap-2.5 rounded-full px-7 text-[17px] font-bold"
+              className="btn-mint inline-flex min-h-[58px] items-center justify-center gap-2.5 rounded-full px-7 text-[17px] font-bold"
             >
               <Icon name="down" className="text-xl" />
               Download free
             </a>
             <a
               href="#how"
-              className="btn-line inline-flex min-h-[58px] items-center gap-2.5 rounded-full px-7 text-[17px] font-semibold"
+              className="btn-line inline-flex min-h-[58px] items-center justify-center gap-2.5 rounded-full px-7 text-[17px] font-semibold"
             >
               See how it works
               <Icon name="arrow" className="text-lg" />
             </a>
           </div>
           <div
-            className="hero-in mt-[34px] flex flex-wrap gap-2.5"
+            className="hero-in mt-6 grid grid-cols-3 gap-2 sm:mt-[34px] sm:flex sm:flex-wrap sm:gap-2.5"
             style={{ animationDelay: "0.32s" }}
           >
             <span className={METHOD_PILL}>
@@ -82,7 +82,7 @@ export function Hero() {
             <span className={METHOD_PILL}>
               <Icon name="mic" className="text-lg text-mint-text" />
               Say it
-              <span className="wave !h-[18px] !gap-[3px]" aria-hidden="true">
+              <span className="wave !h-[18px] !gap-[3px] max-sm:!hidden" aria-hidden="true">
                 {[0, 0.15, 0.3, 0.45].map((d) => (
                   <i key={d} style={{ width: 3, animationDelay: `${d}s` }} />
                 ))}
@@ -97,7 +97,9 @@ export function Hero() {
 
         {/* phones */}
         <div className="flex min-w-0 flex-[1_1_420px] justify-center">
-          <div className="relative h-[640px] w-[min(100%,470px)]">
+          {/* Below 520px the 470px-wide phone composition is scaled down as a unit. */}
+          <div className="relative h-[640px] w-[min(100%,470px)] max-[519px]:h-[480px] max-[519px]:w-[348px] max-[379px]:h-[371px] max-[379px]:w-[273px]">
+          <div className="relative size-full max-[519px]:absolute max-[519px]:left-0 max-[519px]:top-0 max-[519px]:h-[640px] max-[519px]:w-[470px] max-[519px]:origin-top-left max-[519px]:scale-[.74] max-[379px]:scale-[.58]">
             <div
               className="phone-in absolute left-0 top-20 w-[250px] overflow-hidden rounded-[40px] border-[7px] border-ink bg-ink shadow-[0_30px_60px_rgba(16,19,17,0.28)]"
               style={{ animationDelay: "0.25s" }}
@@ -145,6 +147,7 @@ export function Hero() {
               <Icon name="sparkles" className="text-lg text-mint" />
               Alex sorted it
             </div>
+          </div>
           </div>
         </div>
       </div>
