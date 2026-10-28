@@ -6,6 +6,7 @@ import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
 import { FactStrip, Marquee } from "@/components/marquee";
 import { Nav } from "@/components/nav";
+import { Audience, Story } from "@/components/story";
 import { TryIt } from "@/components/try-it";
 
 export default function Home() {
@@ -16,6 +17,8 @@ export default function Home() {
         <Hero />
         <Marquee />
         <FactStrip />
+        <Story />
+        <Audience />
         <HowItWorks />
         <Features />
         <TryIt />

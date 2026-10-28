@@ -194,13 +194,65 @@ function FundsAndDebt() {
             DEBT
           </div>
           <div className="mt-[18px] text-[15px] text-muted">Car loan</div>
-          <div className="mt-1 font-display text-4xl font-bold tracking-[-0.03em]">
+          <div className="mt-1 font-display text-4xl font-bold tracking-[-0.022em]">
             $1,240.00
           </div>
           <div className="mt-0.5 text-[15px] text-muted">left to pay</div>
           <div className="mt-[18px] inline-flex items-center gap-2 rounded-xl bg-mint-soft px-3.5 py-2.5 text-sm font-bold text-mint-text">
             <Icon name="target" className="text-base" />
             Debt-free countdown on
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ---------- Currencies ---------- */
+// Display symbols only; the app supports 150+ currencies.
+const CURRENCY_CHIPS = [
+  ["USD", "$"],
+  ["EUR", "€"],
+  ["GBP", "£"],
+  ["CAD", "$"],
+  ["AUD", "$"],
+  ["INR", "₹"],
+  ["AED", "د.إ"],
+  ["JPY", "¥"],
+  ["CHF", "Fr"],
+  ["MAD", "DH"],
+];
+
+function Currencies() {
+  return (
+    <div className={`mt-24 flex-wrap ${BLOCK}`}>
+      <div className="rv min-w-0 flex-[1_1_380px]">
+        <Eyebrow icon="coin">Currencies</Eyebrow>
+        <BlockTitle>Your money, your currency.</BlockTitle>
+        <BlockText>
+          Budget in dollars, euros, dirhams or any of 150+ currencies. Pick
+          yours once and every amount, bucket and report speaks it.
+        </BlockText>
+      </div>
+      <div className="rv flex min-w-0 flex-[1_1_380px] justify-center">
+        <div className="card lift w-full max-w-[460px] p-6">
+          <div className="flex flex-wrap gap-2.5">
+            {CURRENCY_CHIPS.map(([code, symbol], i) => (
+              <span
+                key={code}
+                className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-[15px] font-semibold ${
+                  i === 0
+                    ? "border-ink bg-ink text-white"
+                    : "border-hair bg-canvas"
+                }`}
+              >
+                <span className={i === 0 ? "text-mint" : "text-mint-text"}>{symbol}</span>
+                {code}
+              </span>
+            ))}
+            <span className="inline-flex items-center rounded-full border border-dashed border-hair px-3.5 py-2 text-[15px] font-semibold text-muted">
+              + 140 more
+            </span>
           </div>
         </div>
       </div>
@@ -230,7 +282,7 @@ function Report() {
               YOUR YEAR ONE WEALTH
             </div>
             <div className="mt-1.5 flex items-baseline gap-2.5">
-              <span className="font-display text-[34px] font-bold tracking-[-0.03em]">
+              <span className="font-display text-[34px] font-bold tracking-[-0.022em]">
                 $2,840.00
               </span>
               <span className="text-[15px] text-muted">built so far</span>
@@ -284,6 +336,7 @@ export function Features() {
       <Receipts />
       <Buckets />
       <FundsAndDebt />
+      <Currencies />
       <Report />
     </section>
   );

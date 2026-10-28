@@ -48,7 +48,7 @@ export function FactStrip() {
               <Icon name={f.icon} />
             </span>
             <div>
-              <div className="font-display text-[26px] font-bold tracking-[-0.03em] sm:text-[30px]">
+              <div className="font-display text-[26px] font-bold tracking-[-0.022em] sm:text-[30px]">
                 {f.title}
               </div>
               <div className="mt-0.5 text-[15px] text-muted">{f.text}</div>

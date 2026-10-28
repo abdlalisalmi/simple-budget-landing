@@ -28,7 +28,7 @@ export function SectionHeading({
     <div className="rv">
       <Eyebrow icon={icon}>{eyebrow}</Eyebrow>
       <h2
-        className="mt-3.5 font-display text-[clamp(36px,5.4vw,66px)] font-bold leading-none tracking-[-0.035em]"
+        className="mt-3.5 font-display text-[clamp(36px,5.4vw,66px)] font-bold leading-none tracking-[-0.028em]"
         style={{ maxWidth }}
       >
         {title}
@@ -45,7 +45,7 @@ export function SectionHeading({
 /** Feature-block heading (smaller than the section heading). */
 export function BlockTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="mt-3 font-display text-[clamp(30px,3.8vw,46px)] font-bold leading-[1.05] tracking-[-0.03em]">
+    <h3 className="mt-3 font-display text-[clamp(30px,3.8vw,46px)] font-bold leading-[1.05] tracking-[-0.022em]">
       {children}
     </h3>
   );

@@ -32,10 +32,10 @@ export function Hero() {
         <div className="min-w-0 flex-[1_1_440px]">
           <div className="hero-in inline-flex items-center gap-2.5 rounded-full border border-hair bg-surface py-2 pl-3.5 pr-4 text-sm font-semibold shadow-card">
             <span className="live-dot" />
-            Now on iOS &amp; Android
+            Early access · iOS &amp; Android
           </div>
           <h1
-            className="hero-in mt-6 font-display text-[clamp(42px,7.6vw,96px)] font-bold leading-[0.96] tracking-[-0.04em]"
+            className="hero-in mt-6 font-display text-[clamp(42px,7.6vw,96px)] font-bold leading-[1] tracking-[-0.022em]"
             style={{ animationDelay: "0.08s" }}
           >
             Every dollar.
@@ -61,7 +61,7 @@ export function Hero() {
               className="btn-mint inline-flex min-h-[58px] items-center justify-center gap-2.5 rounded-full px-7 text-[17px] font-bold"
             >
               <Icon name="down" className="text-xl" />
-              Download free
+              Join the waitlist
             </a>
             <a
               href="#how"

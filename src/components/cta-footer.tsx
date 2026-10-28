@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Icon, type IconName } from "@/components/icons";
 import { Logo } from "@/components/nav";
 import { Year } from "@/components/year";
-import { STORE_LINKS } from "@/content/data";
+import { WaitlistForm } from "@/components/waitlist-form";
 
 const CTA_DOODLES: { icon: IconName; pos: string; size: string; delay?: string }[] = [
   { icon: "coin", pos: "left-[6%] top-[14%]", size: "text-6xl" },
@@ -31,34 +31,15 @@ export function Cta() {
           ))}
         </div>
         <div className="relative">
-          <h2 className="mx-auto max-w-[11em] font-display text-[clamp(40px,6.4vw,80px)] font-bold leading-[0.98] tracking-[-0.04em]">
-            Your budget, one message at a time.
+          <h2 className="mx-auto max-w-[11em] font-display text-[clamp(40px,6.4vw,80px)] font-bold leading-[0.98] tracking-[-0.022em]">
+            Be first in line when Alex launches.
           </h2>
           <p className="mx-auto mt-[22px] max-w-[30em] text-[19px] leading-normal text-[#b4bbb6]">
-            SimpleBudget$ is available now on iPhone and Android. Download it
-            and say hi to Alex.
+            Join the waitlist and get early access the moment SimpleBudget$
+            goes live. Say hi to Alex first.
           </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-3.5">
-            <a
-              href={STORE_LINKS.appStore}
-              className="btn-mint inline-flex min-h-[62px] items-center gap-3 rounded-full px-7 text-[17px] font-bold"
-            >
-              <Icon name="apple" className="text-2xl" />
-              <span className="flex flex-col items-start leading-[1.1]">
-                <span className="text-[11px] font-semibold opacity-75">Download on the</span>
-                App Store
-              </span>
-            </a>
-            <a
-              href={STORE_LINKS.googlePlay}
-              className="btn-line inline-flex min-h-[62px] items-center gap-3 rounded-full px-7 text-[17px] font-bold text-ink"
-            >
-              <Icon name="play" className="text-[22px] text-mint-text" />
-              <span className="flex flex-col items-start leading-[1.1]">
-                <span className="text-[11px] font-semibold text-muted">Get it on</span>
-                Google Play
-              </span>
-            </a>
+          <div className="mt-9">
+            <WaitlistForm />
           </div>
         </div>
       </div>

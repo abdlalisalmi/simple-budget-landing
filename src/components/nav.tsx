@@ -6,7 +6,7 @@ export function Logo({ size = "md" }: { size?: "md" | "sm" }) {
   return (
     <Link
       href="/"
-      className={`flex shrink-0 items-center gap-2.5 font-display font-bold tracking-[-0.02em] ${size === "md" ? "text-[17px] min-[360px]:text-[19px] sm:text-[22px]" : "text-[21px]"}`}
+      className={`flex shrink-0 items-center gap-2.5 font-logo font-bold tracking-[-0.01em] ${size === "md" ? "text-[17px] min-[360px]:text-[19px] sm:text-[22px]" : "text-[21px]"}`}
     >
       <span
         className={`flex items-center justify-center bg-mint font-bold text-on-mint ${box}`}
@@ -19,6 +19,7 @@ export function Logo({ size = "md" }: { size?: "md" | "sm" }) {
 }
 
 const LINKS = [
+  { href: "#story", label: "Our story" },
   { href: "#how", label: "How it works" },
   { href: "#inside", label: "Inside the app" },
   { href: "#try", label: "Try it" },
@@ -44,7 +45,7 @@ export function Nav() {
             href="#download"
             className="btn-mint inline-flex min-h-[46px] items-center gap-2 whitespace-nowrap rounded-full px-3.5 text-sm font-bold min-[360px]:px-4 min-[360px]:text-[15px] md:px-[22px]"
           >
-            Get the app <Icon name="arrow" className="text-base max-[420px]:hidden" />
+            Join waitlist <Icon name="arrow" className="text-base max-[420px]:hidden" />
           </a>
         </nav>
       </div>

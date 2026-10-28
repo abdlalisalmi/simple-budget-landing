@@ -78,7 +78,7 @@ export function TryIt() {
       <div className="rv flex flex-wrap items-center gap-x-14 gap-y-10 rounded-[40px] border border-mint-line bg-mint-soft p-[clamp(28px,5vw,56px)]">
         <div className="min-w-0 flex-[1_1_340px]">
           <Eyebrow icon="chat">Try it</Eyebrow>
-          <h2 className="mt-3 font-display text-[clamp(34px,4.6vw,56px)] font-bold leading-none tracking-[-0.035em]">
+          <h2 className="mt-3 font-display text-[clamp(34px,4.6vw,56px)] font-bold leading-none tracking-[-0.028em]">
             Say it like you&apos;d say it.
           </h2>
           <p className="mt-4 text-lg leading-[1.55] text-[#3f5a4e]">

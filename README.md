@@ -37,3 +37,16 @@ src/
       Google Play requires a public account-deletion request page.
 - [ ] Add `metadata.openGraph` image and a favicon/app icon in `src/app`.
 - [ ] Replace screenshots in `src/assets` as the app UI changes.
+
+## Waitlist (Resend)
+
+`POST /api/waitlist` adds the email to a Resend audience. Set these in Vercel
+(Project Settings → Environment Variables) and in `.env.local` for local dev.
+Never commit them.
+
+| Variable | What |
+| --- | --- |
+| `RESEND_API_KEY` | Resend API key |
+| `RESEND_AUDIENCE_ID` | ID of the audience that holds the waitlist |
+
+Without them the endpoint answers 503 and the form shows an error.

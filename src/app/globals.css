@@ -21,8 +21,9 @@
   --color-pink-text: #b23c78;
   --color-pink-soft: #fde6f0;
 
-  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), var(--font-dm-sans), sans-serif;
+  --font-sans: var(--font-outfit), system-ui, sans-serif;
+  --font-display: var(--font-outfit), system-ui, sans-serif;
+  --font-logo: var(--font-fraunces), Georgia, serif;
 
   --shadow-card: 0 1px 2px #1013110d, 0 8px 24px #10131114;
   --shadow-card-hover: 0 2px 4px #1013110d, 0 18px 40px #10131120;
