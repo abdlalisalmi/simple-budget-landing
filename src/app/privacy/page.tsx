@@ -11,7 +11,8 @@ const PROCESSORS: [string, string][] = [
   ["Anthropic", "AI provider that generates Alex's replies and your monthly reports."],
   ["RevenueCat and Superwall", "Subscription management and the paywall."],
   ["Google Firebase Cloud Messaging", "Delivering push notifications only."],
-  ["Sentry", "Error reports, set up not to include personal data."],
+  ["Sentry", "Error reports, set up to avoid personal data."],
+  ["PostHog", "Product analytics: how the app is used, so we can improve it."],
   ["Resend", "Email delivery, including the waitlist on this website."],
   ["Vercel", "Hosting for this website."],
 ];
@@ -32,7 +33,8 @@ export default function PrivacyPage() {
           <li><strong>Receipt photos:</strong> images you take or upload so Alex can read them.</li>
           <li><strong>Subscription status:</strong> whether you have an active plan, through Apple or Google. We never see your card number.</li>
           <li><strong>Notification token:</strong> a device token, only if you turn on push notifications.</li>
-          <li><strong>Error reports:</strong> technical details when the app fails, collected without personal data.</li>
+          <li><strong>Error reports:</strong> technical details when the app fails, collected with personal data switched off where possible.</li>
+          <li><strong>Usage analytics:</strong> information about how you use the app, such as the screens you open and the features you use, plus basic device details. We use it to understand and improve the product.</li>
           <li><strong>Website waitlist:</strong> the email address you enter on this website.</li>
         </List>
         <p>
@@ -47,6 +49,7 @@ export default function PrivacyPage() {
           <li>To generate Alex&apos;s answers and your monthly reports.</li>
           <li>To manage your subscription and send notifications you asked for.</li>
           <li>To keep the service secure, fix errors and answer your messages.</li>
+          <li>To understand how the app is used and improve it.</li>
           <li>To email you about the launch if you joined the waitlist.</li>
         </List>
         <p>We do not sell your data and we do not show ads.</p>
